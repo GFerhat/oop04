@@ -1,21 +1,31 @@
+enum Gender {
+  female('Female'),
+  male('Male'),
+  diverse('Diverse'),
+  skip('No answer');
+  
+  final String label;
+  const Gender(this.label);
+}
+
+
 class Participant {
   final String lastname;
   final String firstname;
-  final double? avgGrade;
-  final int birthDay;
-  final int birthMonth;
-  final int birthYear;
-  final int age;
-  final bool? hasPrevExpercience;
+  final Gender gender;
+  final int id;
 
   Participant({
     required this.lastname,
     required this.firstname,
-    this.avgGrade,
-    required this.birthDay,
-    required this.birthMonth,
-    required this.birthYear,
-    required this.age,
-    this.hasPrevExpercience,
+    required this.gender,
+    required this.id
   });
+}
+
+class Course {
+  String courseName;
+  final List<Participant> participants;
+
+  Course(this.courseName, this.participants);
 }
