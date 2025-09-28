@@ -27,7 +27,7 @@ print(participantsId);
 
 int randomizer(Set <int> participantsId){
   int id=0;
-  do {id = Random().nextInt(100000)+100000; } 
+  do id = Random().nextInt(100000)+100000; 
   while (participantsId.contains(id));
   participantsId.add(id);
   return id;
